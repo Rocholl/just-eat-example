@@ -1,0 +1,56 @@
+/*
+JUEGA AL 3 EN RAYA DE LOS SELECTORES
+Reglas: 
+- Cada jugador tiene un color (rojo o azul, por ejemplo)
+- Se trata de un juego por turnos.
+- En cada turno, el jugador correspondiente tendrá que seleccionar, mediante algún selector CS, una casilla vacía y pintarla (background-color) con su color.
+- El tiempo máximo por turno es de 1 minuto. Pasado el tiempo, el turno pasará al siguiente jugador.
+- El juego termina cuando alguno de los jugadores haya logrado 3 casillas del mismo color en línea.
+
+AÑADIENDO DIFICULTAD
+- No se pueden repetir los selectores ya utilizados en la ronda.
+- Puedes pintar la casilla del otro jugador si aplicas correctamente la especificidad de clase o el efecto cascada una vez la partida haya quedado en empate.
+*/
+
+/* TABLERO */
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tic-tac-toe {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 500px;
+  height: 500px;
+  background-color: black;
+  gap: 3px;
+  border: 3px solid black;
+}
+
+.tic-tac-toe__cell {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+}
+
+/* SELECTORES UTILIZADOS EN LA PARTIDA */
