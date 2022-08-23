@@ -1,0 +1,14 @@
+<h1>Posts:</h1>
+<div>
+  <input type="text" placeholder="title"  [(ngModel)]="post.title">
+  <input type="text" placeholder="body"  [(ngModel)]="post.body">
+  <input type="text" placeholder="author" [(ngModel)]="post.author">
+  <button (click)="createPost()">Create post</button>
+</div>
+<div>
+  <input type="text" placeholder="title"  [(ngModel)]="currentPost.title">
+  <input type="text" placeholder="body"  [(ngModel)]="currentPost.body">
+  <input type="text" placeholder="author" [(ngModel)]="currentPost.author">
+  <button (click)="editCurrentPost()">Edit post</button>
+</div>
+<app-post *ngFor="let post of posts" [post]="post" (deletePosts)="deletePost(post.id)" (editPosts)="editPost(post)"></app-post>
